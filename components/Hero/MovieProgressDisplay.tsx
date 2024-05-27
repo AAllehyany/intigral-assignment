@@ -1,7 +1,17 @@
 import { humanFriendlyMovieDuration } from '@/utils/timeHelpers'
 import Typography from '../Typography'
+import { VariantProps, cva } from 'class-variance-authority'
 
-type MovieProgressDisplayProps = {
+const movieProgressDisplay = cva('absolute h-full rounded-full', {
+  variants: {
+    color: {
+      white: 'bg-white',
+      red: 'bg-ott-red-2',
+    },
+  },
+})
+
+type MovieProgressDisplayProps = VariantProps<typeof movieProgressDisplay> & {
   duration: number
   watched: number
 }
@@ -9,6 +19,7 @@ type MovieProgressDisplayProps = {
 export default function MovieProgressDisplay({
   duration,
   watched,
+  color,
 }: Readonly<MovieProgressDisplayProps>) {
   const remainingTime = humanFriendlyMovieDuration(duration - watched)
   const watchedPercentage = (watched / duration) * 100
@@ -18,7 +29,7 @@ export default function MovieProgressDisplay({
       <div className="relative w-full max-w-xs h-2">
         <div className="absolute w-full h-full bg-white/20 rounded-full"></div>
         <div
-          className="absolute h-full bg-white rounded-full"
+          className={movieProgressDisplay({ color })}
           style={{ width: `${watchedPercentage}%` }}
         ></div>
       </div>

@@ -24,9 +24,10 @@ const typography = cva('', {
 
       'heading-sm': [
         'font-montserrat',
-        'text-xl',
+        'text-sm',
         'font-semibold',
         'leading-tight',
+        'text-white',
       ],
 
       'body-base': ['font-open', 'text-xl', 'text-white', 'leading-relaxed'],
@@ -42,6 +43,13 @@ const typography = cva('', {
         'font-montserrat',
         'text-sm',
         'text-white',
+        'leading-relaxed',
+      ],
+
+      'content-base-secondary': [
+        'font-montserrat',
+        'text-sm',
+        'text-white/60',
         'leading-relaxed',
       ],
 

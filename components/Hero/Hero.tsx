@@ -57,7 +57,11 @@ function MovieHeroBanner({ movie }: Readonly<MovieHeroBannerProps>) {
         {movie.description}
       </Typography>
 
-      <MovieProgressDisplay duration={movie.duration} watched={movie.watched} />
+      <MovieProgressDisplay
+        duration={movie.duration}
+        watched={movie.watched}
+        color="white"
+      />
 
       <div className="flex items-center gap-7">
         <CallToAction target="#" type="normal" icon={<PlayIconSmall />}>

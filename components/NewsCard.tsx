@@ -16,7 +16,15 @@ function CardImage({
         <div className="w-full bg-gray-400 aspect-video rounded-md"></div>
       )}
 
-      {src && <Image src={src} width={1920} height={1080} alt={alt} />}
+      {src && (
+        <Image
+          src={src}
+          width={1920}
+          height={1080}
+          alt={alt}
+          className="aspect-video w-full h-full object-cover rounded-md"
+        />
+      )}
     </>
   )
 }
@@ -30,7 +38,7 @@ export default function NewsCard({ news }: Readonly<NewsCardProps>) {
         <Typography variant="heading-3" size="heading-sm">
           {news.title}
         </Typography>
-        <Typography variant="p" size="content-base">
+        <Typography variant="p" size="content-base-secondary">
           {news.detail}
         </Typography>
       </div>
