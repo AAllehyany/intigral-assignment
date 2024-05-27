@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import HeaderThumbnail from '@/components/HeaderThumbnail'
 import Hero from '@/components/Hero/Hero'
 import Image from 'next/image'
 
@@ -14,6 +15,7 @@ export default function Home() {
   }
   return (
     <>
+      <HeaderThumbnail image="/header-thumbnail.jfif" />
       <Header />
       <Hero movie={latestMovie} />
     </>

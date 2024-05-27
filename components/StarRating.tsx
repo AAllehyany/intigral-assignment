@@ -10,7 +10,7 @@ export default function StarRating({ rating }: Readonly<{ rating: number }>) {
   return (
     <ul className="flex items-center gap-px">
       {[1, 2, 3, 4, 5].map((value) => (
-        <li>
+        <li key={value}>
           <Star highlighted={value <= rating} />
         </li>
       ))}

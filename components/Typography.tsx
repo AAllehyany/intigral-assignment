@@ -22,6 +22,13 @@ const typography = cva('', {
         'text-white',
       ],
 
+      'heading-sm': [
+        'font-montserrat',
+        'text-xl',
+        'font-semibold',
+        'leading-tight',
+      ],
+
       'body-base': ['font-open', 'text-xl', 'text-white', 'leading-relaxed'],
       'body-xs': [
         'font-bold',
@@ -29,6 +36,13 @@ const typography = cva('', {
         'text-xs',
         'text-white',
         'leading-tight',
+      ],
+
+      'content-base': [
+        'font-montserrat',
+        'text-sm',
+        'text-white',
+        'leading-relaxed',
       ],
 
       'content-sm': [
