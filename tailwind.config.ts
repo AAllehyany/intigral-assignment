@@ -13,6 +13,8 @@ const config: Config = {
         "montserrat": ['var(--font-montserrat)']
       },
       backgroundImage: {
+        "glow-left": "url(/glow-left.png)",
+        "glow-right": "url(/glow-right.png)",
         "footer-bg": "url(/footer-bg.png)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-hero": "radial-gradient(circle, rgba(1,15,41,0.3) 10%, #010F29 100%)",

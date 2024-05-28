@@ -1,4 +1,6 @@
 import FeaturedSection from '@/components/FeaturedSection'
+import GlowLeft from '@/components/GlowLeft'
+import GlowRight from '@/components/GlowRight'
 import Hero from '@/components/Hero/Hero'
 import MainBody from '@/components/MainBody'
 import MovieRailCard from '@/components/Movie/MovieRailCard'
@@ -23,6 +25,8 @@ export default async function Home() {
   ]
   return (
     <>
+      <GlowLeft />
+      <GlowRight />
       <Hero movie={featuredMovie} sponsors={sponsors} />
       <MainBody>
         <NewsBlock news={latestNews.news} categories={latestNews.categories} />
