@@ -13,6 +13,7 @@ export default async function Home() {
   const latestNews = await fetchLatestNewsWithCategories()
 
   const trendingMovies = Array(24).fill(featuredMovie)
+  const tallMovies = Array(28).fill(featuredMovie)
 
   return (
     <>
@@ -21,7 +22,7 @@ export default async function Home() {
         <NewsBlock news={latestNews.news} categories={latestNews.categories} />
         <FeaturedSection title="Featured by System">
           <Rail rows={7}>
-            {trendingMovies.map((m, k) => (
+            {tallMovies.map((m, k) => (
               <Link href="#" className="w-full" key={k}>
                 <MovieRailCard width="normal" aspect="vertical" movie={m} />
               </Link>
@@ -40,8 +41,8 @@ export default async function Home() {
         </FeaturedSection>
 
         <FeaturedSection title="Featured By System">
-          <Rail rows={6}>
-            {trendingMovies.map((m, k) => (
+          <Rail rows={7}>
+            {tallMovies.map((m, k) => (
               <Link href="#" className="w-full" key={k}>
                 <MovieRailCard width="normal" aspect="horizontal" movie={m} />
               </Link>
