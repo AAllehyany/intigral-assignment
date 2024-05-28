@@ -14,10 +14,16 @@ export default async function Home() {
 
   const trendingMovies = Array(24).fill(featuredMovie)
   const tallMovies = Array(28).fill(featuredMovie)
-
+  const sponsors = [
+    'hbo',
+    'cinemax',
+    'national-geographic',
+    'disney',
+    'discovery',
+  ]
   return (
     <>
-      <Hero movie={featuredMovie} />
+      <Hero movie={featuredMovie} sponsors={sponsors} />
       <MainBody>
         <NewsBlock news={latestNews.news} categories={latestNews.categories} />
         <FeaturedSection title="Featured by System">

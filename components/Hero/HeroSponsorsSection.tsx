@@ -25,8 +25,8 @@ export default function HeroSponsorsSection({
   return (
     <div className="w-full max-w-[600px]">
       <Rail rows={5} controls="sm" shape="transparent">
-        {sponsors.map((sponsor) => (
-          <SponsorImage sponsor={sponsor} />
+        {sponsors.map((sponsor, idx) => (
+          <SponsorImage sponsor={sponsor} key={idx} />
         ))}
       </Rail>
     </div>

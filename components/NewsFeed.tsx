@@ -12,8 +12,8 @@ export default function NewsFeed({ news }: Readonly<NewsFeedProps>) {
     <Container>
       <div className="grid grid-cols-6 gap-2">
         {news.map((value, idx) => (
-          <Link href="#">
-            <NewsCard news={value} key={idx} />
+          <Link href="#" key={idx}>
+            <NewsCard news={value} />
           </Link>
         ))}
       </div>

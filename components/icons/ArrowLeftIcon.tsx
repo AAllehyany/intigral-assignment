@@ -25,7 +25,7 @@ export default function ArrowLeftIcon() {
       <path
         d="M21.3334 16.0845H10.6667"
         stroke="#D6D9DD"
-        stroke-width="2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -11,69 +11,14 @@ import PlayIconSmall from '../icons/PlayIconSmall'
 import PlusIcon from '../icons/PlusIcon'
 import HeroSponsorsSection from './HeroSponsorsSection'
 import HeroMediaControls from './HeroMediaControls'
+import HeroMovieData from './HeroMovieData'
 
 type HeroContentProps = {
   movie: MovieData
+  sponsors: string[]
 }
 
-type MovieHeroBannerProps = {
-  movie: MovieData
-}
-
-function MovieHeroBanner({ movie }: Readonly<MovieHeroBannerProps>) {
-  return (
-    <div className="flex flex-col gap-7">
-      <div className="flex flex-col gap-4">
-        <Typography variant="heading-1" size="heading-lg">
-          {movie.title}
-        </Typography>
-        <ul className="flex items-center gap-3">
-          <li>
-            <Typography variant="p" size="body-xs">
-              {movie.releaseYear}
-            </Typography>
-          </li>
-          <li>
-            <VerticalBar />
-          </li>
-          <li>
-            <Typography variant="p" size="body-xs">
-              By {movie.director}
-            </Typography>
-          </li>
-          <li>
-            <VerticalBar />
-          </li>
-          <li>
-            <Typography variant="p" size="body-xs">
-              {humanFriendlyMovieDuration(movie.duration)}
-            </Typography>
-          </li>
-          <li>
-            <StarRating rating={movie.rating} />
-          </li>
-        </ul>
-      </div>
-
-      <Typography variant="p" size="body-base">
-        {movie.description}
-      </Typography>
-
-      <MovieProgressDisplay duration={movie.duration} watched={movie.watched} />
-
-      <div className="flex items-center gap-7">
-        <CallToAction target="#" type="normal" icon={<PlayIconSmall />}>
-          Watch
-        </CallToAction>
-        <CallToAction target="#" type="outline" icon={<PlusIcon />}>
-          Add To List
-        </CallToAction>
-      </div>
-    </div>
-  )
-}
-
-function HeroContent({ movie }: Readonly<HeroContentProps>) {
+function HeroContent({ movie, sponsors }: Readonly<HeroContentProps>) {
   return (
     <div className="w-[800px] flex flex-col gap-7">
       <div>
@@ -81,29 +26,22 @@ function HeroContent({ movie }: Readonly<HeroContentProps>) {
           Live
         </Tag>
       </div>
-      <MovieHeroBanner movie={movie} />
-      <HeroSponsorsSection
-        sponsors={[
-          'hbo',
-          'cinemax',
-          'national-geographic',
-          'disney',
-          'discovery',
-        ]}
-      />
+      <HeroMovieData movie={movie} />
+      <HeroSponsorsSection sponsors={sponsors} />
     </div>
   )
 }
 
 type HeroProps = {
   movie: MovieData
+  sponsors: string[]
 }
 
-export default function Hero({ movie }: Readonly<HeroProps>) {
+export default function Hero({ movie, sponsors }: Readonly<HeroProps>) {
   return (
     <div className="w-full mt-28 p-0 relative">
       <Container>
-        <HeroContent movie={movie} />
+        <HeroContent movie={movie} sponsors={sponsors} />
       </Container>
       <HeroMediaControls rating={18} />
     </div>
