@@ -4,8 +4,10 @@ import '@testing-library/jest-dom'
 import Rail from './Rail' // Replace with your actual path
 
 it('renders the Rail component', () => {
-  const children = [<div>Item 1</div>, <div>Item 2</div>, <div>Item 3</div>]
-  const { container } = render(<Rail rows={1}>{children}</Rail>)
+  const mockChildren = Array.from({ length: 2 }, (_, i) => (
+    <div key={i}>Item {i + 1}</div>
+  ))
+  const { container } = render(<Rail rows={1}>{mockChildren}</Rail>)
   expect(container).toMatchSnapshot()
 })
 
