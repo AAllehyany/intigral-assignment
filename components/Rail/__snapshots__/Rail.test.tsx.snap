@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Rail component 1`] = `
+<div>
+  <div
+    class="w-full overflow-x-hidden flex justify-center relative"
+    data-current="0"
+    data-testid="rail-container"
+  >
+    <div
+      class="flex w-full items-start transition duration-200"
+      style="transform: translateX(0%);"
+    >
+      <div
+        class="w-full shrink-0 grow-0 p-1"
+        style="flex-basis: 100%; max-width: 100%;"
+      >
+        <div>
+          Item 1
+        </div>
+      </div>
+      <div
+        class="w-full shrink-0 grow-0 p-1"
+        style="flex-basis: 100%; max-width: 100%;"
+      >
+        <div>
+          Item 2
+        </div>
+      </div>
+      <div
+        class="w-full shrink-0 grow-0 p-1"
+        style="flex-basis: 100%; max-width: 100%;"
+      >
+        <div>
+          Item 3
+        </div>
+      </div>
+    </div>
+    <button
+      class="absolute flex justify-center items-center top-0 z-2 text-white left-0 w-16 h-[calc(100%-1.75rem)] bg-black/40 hover:bg-black/50 backdrop-blur-lg"
+      data-testid="rails-controls-left"
+    >
+      <svg
+        class="size-6 fill-current"
+        fill="none"
+        height="17"
+        viewBox="0 0 8 17"
+        width="8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 16.5L6.99382e-07 8.5L8 0.5"
+          opacity="0.6"
+        />
+      </svg>
+    </button>
+    <button
+      class="absolute flex justify-center items-center top-0 z-2 text-white right-0 w-16 h-[calc(100%-1.75rem)] bg-black/40 hover:bg-black/50 backdrop-blur-lg"
+      data-testid="rails-controls-right"
+    >
+      <svg
+        class="size-6 fill-current"
+        fill="none"
+        height="17"
+        viewBox="0 0 8 17"
+        width="8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 16.5L8 8.5L-1.39876e-06 0.5"
+          fill="#F2F2F2"
+          opacity="0.6"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

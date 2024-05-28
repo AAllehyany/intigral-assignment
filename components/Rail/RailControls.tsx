@@ -35,7 +35,11 @@ export default function RailControls({
   shape,
 }: Readonly<RailControlsProps>) {
   return (
-    <button onClick={handler} className={railControls({ arrow, shape })}>
+    <button
+      data-testid={`rails-controls-${direction}`}
+      onClick={handler}
+      className={railControls({ arrow, shape })}
+    >
       {direction === 'left' && size === 'lg' && (
         <svg
           width="8"

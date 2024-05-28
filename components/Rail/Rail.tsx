@@ -30,7 +30,11 @@ export default function Rail({
   }
 
   return (
-    <div className="w-full overflow-x-hidden flex justify-center relative">
+    <div
+      className="w-full overflow-x-hidden flex justify-center relative"
+      data-testid="rail-container"
+      data-current={currentIndex}
+    >
       <div
         className="flex w-full items-start transition duration-200"
         style={{
