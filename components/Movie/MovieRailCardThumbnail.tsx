@@ -49,6 +49,12 @@ export default function MovieRailCardThumbnail({
           className="w-full h-full object-cover"
         />
       </div>
+      {!hovering && (
+        <div className="w-full absolute bottom-0 z-1 flex h-full">
+          <div className="w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div>
+        </div>
+      )}
+
       {hovering && (
         <MovieRailCardOverlay
           duration={duration}
