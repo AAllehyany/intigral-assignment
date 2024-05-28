@@ -2,6 +2,8 @@ import Header from '@/components/Header'
 import HeaderThumbnail from '@/components/HeaderThumbnail'
 import Hero from '@/components/Hero/Hero'
 import NewsFeed from '@/components/NewsFeed'
+import RailCard from '@/components/Rails/RailCard'
+import RailContainer from '@/components/Rails/RailContainer'
 import Image from 'next/image'
 
 export default function Home() {
@@ -21,6 +23,7 @@ export default function Home() {
       <Header />
       <Hero movie={latestMovie} />
       <NewsFeed />
+      <RailContainer />
     </>
   )
 }
