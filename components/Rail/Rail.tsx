@@ -2,6 +2,7 @@
 import RailControls from './RailControls'
 import RailItem from './RailItem'
 import { ReactNode, useState } from 'react'
+import RailsSlider from './RailsSlider'
 
 type RailProps = {
   rows: number
@@ -35,18 +36,11 @@ export default function Rail({
       data-testid="rail-container"
       data-current={currentIndex}
     >
-      <div
-        className="flex w-full items-start transition duration-200"
-        style={{
-          transform: `translateX(${-100 * currentIndex}%)`,
-        }}
-      >
-        {children.map((child, idx) => (
-          <RailItem width={rowWidth} key={idx}>
-            {child}
-          </RailItem>
-        ))}
-      </div>
+      <RailsSlider
+        selected={currentIndex}
+        items={children}
+        rowWidth={rowWidth}
+      />
 
       <RailControls
         size={controls}
