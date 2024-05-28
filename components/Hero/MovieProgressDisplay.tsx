@@ -1,6 +1,6 @@
 import { humanFriendlyMovieDuration } from '@/utils/timeHelpers'
 import Typography from '../Typography'
-import MovieProgressBar from '../Movie/MovieProgress'
+import MovieProgressBar from '../Movie/MovieProgressBar'
 
 type MovieProgressDisplayProps = {
   duration: number

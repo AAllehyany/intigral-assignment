@@ -1,5 +1,5 @@
 import PlayIcon from '../icons/PlayIcon'
-import MovieProgressBar from './MovieProgress'
+import MovieProgressBar from './MovieProgressBar'
 
 type MovieRailCardOverlayProps = {
   showProgress: boolean
