@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <div className="w-full bg-ott-blue-2 mt-12 py-3 bg-footer-bg bg-right bg-no-repeat">
       <Container>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="h-6">
             <AppLogo />
           </div>
