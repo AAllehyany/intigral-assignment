@@ -5,6 +5,15 @@ type NewsResponse = {
   news: NewsData[][]
 }
 
+/**
+ * Fetches the latest news with associated categories.
+ *
+ * Simulates an asynchronous data fetch by returning a Promise that resolves
+ * after a short timeout.
+ *
+ * @returns {Promise<NewsResponse>} A Promise that resolves to a `NewsResponse` object
+ * containing the categories and their associated news items.
+ */
 export async function fetchLatestNewsWithCategories(): Promise<NewsResponse> {
   const categories = ['Related News', 'Tech', 'Culture', 'Business']
   const news = [
