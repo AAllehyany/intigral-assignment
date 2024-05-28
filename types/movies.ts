@@ -8,4 +8,5 @@ export type MovieData = {
   duration: number;
   watched: number;
   thumbnail: string;
+  ageRating: number;
 }

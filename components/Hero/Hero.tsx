@@ -38,7 +38,7 @@ export default function Hero({ movie, sponsors }: Readonly<HeroProps>) {
         <Container>
           <HeroContent movie={movie} sponsors={sponsors} />
         </Container>
-        <HeroMediaControls rating={18} />
+        <HeroMediaControls rating={movie.ageRating} />
       </div>
     </>
   )
