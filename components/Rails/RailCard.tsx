@@ -6,7 +6,7 @@ import Typography from '../Typography'
 const railCard = cva('h-full object-cover', {
   variants: {
     direction: {
-      vertical: 'aspect-[9/16] w-[240px] ',
+      vertical: 'aspect-[257/343] w-[240px] ',
       horizontal: 'aspect-video w-[270px]',
     },
   },
@@ -21,7 +21,7 @@ export default function RailCard({
   direction,
 }: Readonly<RailCardProps>) {
   return (
-    <div className=" flex flex-col gap-3 shrink-0 hover:scale-105 transition duration-100 ">
+    <div className="flex flex-col gap-3 shrink-0 transition duration-100 ">
       <Image
         src={movie.thumbnail}
         alt=""

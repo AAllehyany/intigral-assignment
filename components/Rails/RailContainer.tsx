@@ -2,7 +2,11 @@ import RailCard from './RailCard'
 import RailLeftButton from './RailLeftButton'
 import RailRightButton from './RailRightButton'
 
-export default function RailContainer({ direction }: { direction: string }) {
+export default function RailContainer({
+  direction,
+}: {
+  direction: 'horizontal' | 'vertical'
+}) {
   const latestMovie = {
     title: 'Pacific Rim Uprising',
     releaseYear: 2008,
@@ -14,7 +18,7 @@ export default function RailContainer({ direction }: { direction: string }) {
     description: `From film studios to streaming services to online publishers, our solutions enable companies to implement more efficient digital content strategies`,
   }
   return (
-    <div className="group w-full flex overflow-x-hidden gap-2 items-center overflow-y-hidden relative">
+    <div className="group w-full flex overflow-x-hidden gap-2 items-center  relative h-fit">
       <RailCard direction={direction} movie={latestMovie} />
       <RailCard direction={direction} movie={latestMovie} />
       <RailCard direction={direction} movie={latestMovie} />
