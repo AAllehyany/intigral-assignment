@@ -1,7 +1,6 @@
 import { NewsData } from '@/types/news'
 import Container from './Container'
 import NewsCard from './NewsCard'
-import TabsBlock from './TabsBlock/TabsBlock'
 
 type NewsFeedProps = {
   news: NewsData[]

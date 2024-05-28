@@ -1,33 +1,35 @@
 import { MovieData } from '@/types/movies'
 import { VariantProps, cva } from 'class-variance-authority'
-import Image from 'next/image'
 import Typography from '../Typography'
+import RailCardThumbnail from './RailCardThumbnail'
 
-const railCard = cva('h-full object-cover', {
+const railCard = cva('flex flex-col gap-3 shrink-0 cursor-pointer', {
   variants: {
-    direction: {
-      vertical: 'aspect-[257/343] w-[240px] ',
-      horizontal: 'aspect-video w-[270px]',
+    width: {
+      normal: 'w-[300px]',
+      tall: 'w-[260px]',
     },
   },
 })
 
 type RailCardProps = VariantProps<typeof railCard> & {
   movie: MovieData
+  aspect: 'horizontal' | 'vertical'
 }
 
 export default function RailCard({
   movie,
-  direction,
+  aspect,
+  width,
 }: Readonly<RailCardProps>) {
   return (
-    <div className="flex flex-col gap-3 shrink-0 transition duration-100 ">
-      <Image
+    <div className={railCard({ width })}>
+      <RailCardThumbnail
         src={movie.thumbnail}
-        alt=""
-        width={1920}
-        height={1080}
-        className={railCard({ direction })}
+        watched={0}
+        duration={0}
+        showProgress={false}
+        aspect={aspect}
       />
 
       <Typography variant="p" size="content-base">

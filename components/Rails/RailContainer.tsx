@@ -1,3 +1,6 @@
+'use client'
+
+import { useHover } from '@uidotdev/usehooks'
 import RailCard from './RailCard'
 import RailLeftButton from './RailLeftButton'
 import RailRightButton from './RailRightButton'
@@ -7,6 +10,8 @@ export default function RailContainer({
 }: {
   direction: 'horizontal' | 'vertical'
 }) {
+  const [ref, hovering] = useHover()
+
   const latestMovie = {
     title: 'Pacific Rim Uprising',
     releaseYear: 2008,
@@ -18,25 +23,76 @@ export default function RailContainer({
     description: `From film studios to streaming services to online publishers, our solutions enable companies to implement more efficient digital content strategies`,
   }
   return (
-    <div className="group w-full flex overflow-x-hidden gap-2 items-center  relative h-fit">
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
-      <RailCard direction={direction} movie={latestMovie} />
+    <div
+      className="max-w-full overflow-x-hidden w-full flex gap-2 items-center overflow-y-visible relative"
+      ref={ref}
+    >
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
+      <RailCard
+        width={direction === 'vertical' ? 'tall' : 'normal'}
+        aspect={direction}
+        movie={latestMovie}
+      />
 
-      <div className="hidden group-hover:flex absolute left-0 h-full z-2">
-        <RailLeftButton />
-      </div>
-      <div className="hidden group-hover:flex absolute right-0 h-full z-2">
-        <RailRightButton />
-      </div>
+      {hovering && (
+        <div className="absolute left-0 h-full z-2">
+          <RailLeftButton />
+        </div>
+      )}
+      {hovering && (
+        <div className="absolute right-0 h-full z-2">
+          <RailRightButton />
+        </div>
+      )}
     </div>
   )
 }
