@@ -54,7 +54,7 @@ export default async function Home() {
           <Rail rows={7}>
             {tallMovies.map((m, k) => (
               <Link href="#" className="w-full" key={k}>
-                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+                <MovieRailCard width="normal" aspect="vertical" movie={m} />
               </Link>
             ))}
           </Rail>
@@ -64,7 +64,7 @@ export default async function Home() {
           <Rail rows={6}>
             {trendingMovies.map((m, k) => (
               <Link href="#" className="w-full" key={k}>
-                <MovieRailCard width="normal" aspect="vertical" movie={m} />
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
               </Link>
             ))}
           </Rail>
