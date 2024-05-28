@@ -1,6 +1,6 @@
 import { NewsData } from '@/types/news'
 import Image from 'next/image'
-import Typography from './Typography'
+import Typography from '../Typography'
 
 type NewsCardProps = {
   news: NewsData

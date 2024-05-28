@@ -1,7 +1,7 @@
 'use client'
 
 import { NewsData } from '@/types/news'
-import TabsBlock from './TabsBlock/TabsBlock'
+import TabsBlock from '../TabsBlock/TabsBlock'
 import NewsFeed from './NewsFeed'
 
 type NewsBlockProps = {

@@ -1,5 +1,5 @@
 import { NewsData } from '@/types/news'
-import Container from './Container'
+import Container from '../Container'
 import NewsCard from './NewsCard'
 import Link from 'next/link'
 
