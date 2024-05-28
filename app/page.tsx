@@ -1,10 +1,9 @@
 import FeaturedSection from '@/components/FeaturedSection'
-import Header from '@/components/Header'
-import HeaderThumbnail from '@/components/HeaderThumbnail'
+import Header from '@/components/Header/Header'
+import HeaderThumbnail from '@/components/Header/HeaderThumbnail'
 import Hero from '@/components/Hero/Hero'
 import MainBody from '@/components/MainBody'
 import NewsFeed from '@/components/NewsFeed'
-import RailCard from '@/components/Rails/RailCard'
 import RailContainer from '@/components/Rails/RailContainer'
 import Image from 'next/image'
 

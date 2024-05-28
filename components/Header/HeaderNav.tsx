@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Avatar from './Avatar'
+import Avatar from '../Avatar'
 import HeaderNavLink from './HeaderNavLink'
-import NotificationBadgeIcon from './icons/NotificationBadgeIcon'
-import SearchIcon from './icons/SearchIcon'
+import NotificationBadgeIcon from '../icons/NotificationBadgeIcon'
+import SearchIcon from '../icons/SearchIcon'
 
 export default function HeaderNav() {
   return (

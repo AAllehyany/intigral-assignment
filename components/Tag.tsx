@@ -17,7 +17,7 @@ const tag = cva('inline-flex items-center gap-2 ', {
       small: ['text-sm', 'font-semibold'],
     },
     shape: {
-      default: ['h-7', 'px-4', 'py-0', 'rounded-sm font-montserrat'],
+      default: ['h-7', 'px-4', 'py-0', 'rounded-md', 'font-montserrat'],
       full: ['px-4', 'py-1.5', 'rounded-full font-open'],
     },
   },
