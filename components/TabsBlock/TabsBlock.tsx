@@ -17,7 +17,10 @@ export default function TabsBlock({
   children,
 }: Readonly<TabsBlockProps>) {
   return (
-    <Tabs.Root className="w-full flex flex-col gap-12 mt-28">
+    <Tabs.Root
+      className="w-full flex flex-col gap-12 mt-28"
+      defaultValue={tabs[0].value}
+    >
       <Tabs.List
         className="shrink-0 items-center border-b border-white/20"
         defaultValue="related"

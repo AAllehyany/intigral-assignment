@@ -6,8 +6,8 @@ import { ReactNode, useState } from 'react'
 type RailProps = {
   rows: number
   children: ReactNode[]
-  controls: 'lg' | 'sm'
-  shape: 'dark' | 'transparent'
+  controls?: 'lg' | 'sm'
+  shape?: 'dark' | 'transparent'
 }
 
 export default function Rail({

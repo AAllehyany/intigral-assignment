@@ -1,4 +1,5 @@
 import { VariantProps, cva } from 'class-variance-authority'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 type TypographyLevel = 'heading-1' | 'heading-2' | 'heading-3' | 'p' | 'span'
 
@@ -64,7 +65,10 @@ const typography = cva('', {
   },
 })
 
-type TypographyProps = React.HtmlHTMLAttributes<{}> &
+type TypographyProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+> &
   VariantProps<typeof typography> & {
     variant: TypographyLevel
     children: React.ReactNode
@@ -74,8 +78,13 @@ export default function Typography({
   variant,
   size,
   children,
+  ...props
 }: Readonly<TypographyProps>) {
   const Component = typographyLevelMap[variant] ?? 'p'
 
-  return <Component className={typography({ size })}>{children}</Component>
+  return (
+    <Component className={typography({ size })} {...props}>
+      {children}
+    </Component>
+  )
 }

@@ -3,10 +3,9 @@
 import { useHover } from '@uidotdev/usehooks'
 import { VariantProps, cva } from 'class-variance-authority'
 import Image from 'next/image'
-import RailThumbnailOverlay from './RailThumbnailOverlay'
-import { watch } from 'fs'
+import MovieRailCardOverlay from './MovieRailCardOverlay'
 
-const railCardThumbnail = cva(
+const movieRailCardThumbnail = cva(
   'group w-full relative hover:scale-105 transition duration-100 origin-top',
   {
     variants: {
@@ -21,24 +20,26 @@ const railCardThumbnail = cva(
   },
 )
 
-type RailCardThumbnailProps = VariantProps<typeof railCardThumbnail> & {
+type MovieRailCardThumbnailProps = VariantProps<
+  typeof movieRailCardThumbnail
+> & {
   src: string
   duration: number
   watched: number
   showProgress: boolean
 }
 
-export default function RailCardThumbnail({
+export default function MovieRailCardThumbnail({
   src,
   duration,
   watched,
   showProgress,
   aspect,
-}: Readonly<RailCardThumbnailProps>) {
+}: Readonly<MovieRailCardThumbnailProps>) {
   const [ref, hovering] = useHover()
 
   return (
-    <div className={railCardThumbnail({ aspect })} ref={ref}>
+    <div className={movieRailCardThumbnail({ aspect })} ref={ref}>
       <div className="absolute w-full h-full inset-0 z-1">
         <Image
           src={src}
@@ -49,7 +50,7 @@ export default function RailCardThumbnail({
         />
       </div>
       {hovering && (
-        <RailThumbnailOverlay
+        <MovieRailCardOverlay
           duration={duration}
           showProgress={showProgress}
           watched={watched}

@@ -1,7 +1,6 @@
 import { humanFriendlyMovieDuration } from '@/utils/timeHelpers'
 import Typography from '../Typography'
-import { VariantProps, cva } from 'class-variance-authority'
-import MovieProgressBar from '../MovieProgress'
+import MovieProgressBar from '../Movie/MovieProgress'
 
 type MovieProgressDisplayProps = {
   duration: number

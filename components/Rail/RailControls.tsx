@@ -3,7 +3,7 @@ import ArrowLeftIcon from '../icons/ArrowLeftIcon'
 import ArrowRightIcon from '../icons/ArrowRightIcon'
 
 const railControls = cva(
-  'w-12 h-full absolute flex justify-center items-center top-0 z-2 text-white',
+  'absolute flex justify-center items-center top-0 z-2 text-white',
   {
     variants: {
       arrow: {
@@ -11,8 +11,8 @@ const railControls = cva(
         right: 'right-0',
       },
       shape: {
-        dark: 'bg-black/60 hover:bg-black/80',
-        transparent: '',
+        dark: 'w-16 h-[calc(100%-1.75rem)] bg-black/40 hover:bg-black/50 backdrop-blur-lg',
+        transparent: 'w-6 h-full',
       },
     },
     defaultVariants: {

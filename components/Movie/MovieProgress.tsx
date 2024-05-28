@@ -22,7 +22,7 @@ export default function MovieProgressBar({
   const watchedPercentage = (watched / duration) * 100
 
   return (
-    <div className="relative w-full max-w-xs h-2">
+    <div className="relative w-full max-w-xs h-1">
       <div className="absolute w-full h-full bg-white/20 rounded-full"></div>
       <div
         className={movieProgressBar({ color })}

@@ -1,116 +1,92 @@
 import FeaturedSection from '@/components/FeaturedSection'
-import Header from '@/components/Header/Header'
-import HeaderThumbnail from '@/components/Header/HeaderThumbnail'
 import Hero from '@/components/Hero/Hero'
 import MainBody from '@/components/MainBody'
+import MovieRailCard from '@/components/Movie/MovieRailCard'
 import NewsBlock from '@/components/NewsBlock'
-import NewsFeed from '@/components/NewsFeed'
 import Rail from '@/components/Rail/Rail'
-import RailCard from '@/components/Rails/RailCard'
-import RailContainer from '@/components/Rails/RailContainer'
-import Image from 'next/image'
+import { fetchFeaturedMovie } from '@/lib/server/featuredMovie'
+import { fetchLatestNewsWithCategories } from '@/lib/server/newsSection'
 import Link from 'next/link'
 
-export default function Home() {
-  const latestMovie = {
-    title: 'Pacific Rim Uprising',
-    releaseYear: 2008,
-    director: 'Jon Favreau',
-    duration: 7500, //2h 5min,
-    watched: 4920,
-    rating: 4,
-    thumbnail: '/header-thumbnail.jfif',
-    description: `From film studios to streaming services to online publishers, our solutions enable companies to implement more efficient digital content strategies`,
-  }
+export default async function Home() {
+  const featuredMovie = await fetchFeaturedMovie()
+  const latestNews = await fetchLatestNewsWithCategories()
 
-  const newsCategories = ['Related News', 'Tech', 'Culture', 'Business']
-
-  let latestNews = [
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-1.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-2.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-3.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-4.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-5.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-    {
-      title: 'Hit First Case | Coming on 28 Feb',
-      url: '#',
-      alt: '',
-      image: '/news-6.png',
-      detail:
-        'I want to talk about the hard stuff people wonder about but maybe are embarassed...',
-    },
-  ]
-
-  const trendingMovies = Array(24).fill(latestMovie)
-
-  const newsBlockData = [latestNews, latestNews, latestNews, latestNews]
+  const trendingMovies = Array(24).fill(featuredMovie)
 
   return (
     <>
-      <HeaderThumbnail image={latestMovie.thumbnail} />
-      <Header />
-      <Hero movie={latestMovie} />
+      <Hero movie={featuredMovie} />
       <MainBody>
-        <NewsBlock news={newsBlockData} categories={newsCategories} />
+        <NewsBlock news={latestNews.news} categories={latestNews.categories} />
         <FeaturedSection title="Featured by System">
           <Rail rows={7}>
             {trendingMovies.map((m, k) => (
               <Link href="#" className="w-full" key={k}>
-                <RailCard width="normal" aspect="vertical" movie={m} />
+                <MovieRailCard width="normal" aspect="vertical" movie={m} />
               </Link>
             ))}
           </Rail>
         </FeaturedSection>
 
         <FeaturedSection title="Trending Content">
-          <RailContainer direction="horizontal" />
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+              </Link>
+            ))}
+          </Rail>
         </FeaturedSection>
 
-        <FeaturedSection title="featured by system">
-          <RailContainer direction="horizontal" />
+        <FeaturedSection title="Featured By System">
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+              </Link>
+            ))}
+          </Rail>
         </FeaturedSection>
 
-        <FeaturedSection title="featured by system">
-          <RailContainer direction="horizontal" />
+        <FeaturedSection title="Featured By System">
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="vertical" movie={m} />
+              </Link>
+            ))}
+          </Rail>
         </FeaturedSection>
 
-        <FeaturedSection title="featured by system">
-          <RailContainer direction="horizontal" />
+        <FeaturedSection title="Featured By System">
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+              </Link>
+            ))}
+          </Rail>
+        </FeaturedSection>
+
+        <FeaturedSection title="Featured By System">
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+              </Link>
+            ))}
+          </Rail>
+        </FeaturedSection>
+
+        <FeaturedSection title="Featured By System">
+          <Rail rows={6}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <MovieRailCard width="normal" aspect="horizontal" movie={m} />
+              </Link>
+            ))}
+          </Rail>
         </FeaturedSection>
       </MainBody>
     </>
