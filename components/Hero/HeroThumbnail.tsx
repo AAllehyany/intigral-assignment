@@ -1,8 +1,6 @@
 import Image from 'next/image'
 
-export default function HeaderThumbnail({
-  image,
-}: Readonly<{ image: string }>) {
+export default function HeroThumbnail({ image }: Readonly<{ image: string }>) {
   return (
     <div className="w-full h-[1080px] overflow-clip z-[-1] absolute inset-0">
       <Image

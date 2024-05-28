@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${montserrat.variable} bg-ott-blue-2 font-montserrat`}
       >
-        <Header thumbnail="/header-thumbnail.jfif" />
+        <Header />
         {children}
         <Footer />
       </body>
