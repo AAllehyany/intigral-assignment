@@ -1,6 +1,8 @@
+import FeaturedSection from '@/components/FeaturedSection'
 import Header from '@/components/Header'
 import HeaderThumbnail from '@/components/HeaderThumbnail'
 import Hero from '@/components/Hero/Hero'
+import MainBody from '@/components/MainBody'
 import NewsFeed from '@/components/NewsFeed'
 import RailCard from '@/components/Rails/RailCard'
 import RailContainer from '@/components/Rails/RailContainer'
@@ -22,8 +24,28 @@ export default function Home() {
       <HeaderThumbnail image={latestMovie.thumbnail} />
       <Header />
       <Hero movie={latestMovie} />
-      <NewsFeed />
-      <RailContainer />
+      <MainBody>
+        <NewsFeed />
+        <FeaturedSection title="Featured by System">
+          <RailContainer direction="vertical" />
+        </FeaturedSection>
+
+        <FeaturedSection title="Trending Content">
+          <RailContainer direction="horizontal" />
+        </FeaturedSection>
+
+        <FeaturedSection title="featured by system">
+          <RailContainer direction="horizontal" />
+        </FeaturedSection>
+
+        <FeaturedSection title="featured by system">
+          <RailContainer direction="horizontal" />
+        </FeaturedSection>
+
+        <FeaturedSection title="featured by system">
+          <RailContainer direction="horizontal" />
+        </FeaturedSection>
+      </MainBody>
     </>
   )
 }
