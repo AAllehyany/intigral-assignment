@@ -6,7 +6,7 @@ export default function MuteIcon() {
       viewBox="0 0 40 41"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="size-6 fill-current"
+      className="size-10 stroke-current"
     >
       <circle cx="20" cy="20.0845" r="20" fill="#28292B" fillOpacity="0.2" />
       <circle

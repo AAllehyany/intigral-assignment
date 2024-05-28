@@ -9,6 +9,8 @@ import MovieProgressDisplay from './MovieProgressDisplay'
 import CallToAction from '../CallToAction'
 import PlayIconSmall from '../icons/PlayIconSmall'
 import PlusIcon from '../icons/PlusIcon'
+import HeroSponsorsSection from './HeroSponsorsSection'
+import HeroMediaControls from './HeroMediaControls'
 
 type HeroContentProps = {
   movie: MovieData
@@ -57,11 +59,7 @@ function MovieHeroBanner({ movie }: Readonly<MovieHeroBannerProps>) {
         {movie.description}
       </Typography>
 
-      <MovieProgressDisplay
-        duration={movie.duration}
-        watched={movie.watched}
-        color="white"
-      />
+      <MovieProgressDisplay duration={movie.duration} watched={movie.watched} />
 
       <div className="flex items-center gap-7">
         <CallToAction target="#" type="normal" icon={<PlayIconSmall />}>
@@ -84,6 +82,15 @@ function HeroContent({ movie }: Readonly<HeroContentProps>) {
         </Tag>
       </div>
       <MovieHeroBanner movie={movie} />
+      <HeroSponsorsSection
+        sponsors={[
+          'hbo',
+          'cinemax',
+          'national-geographic',
+          'disney',
+          'discovery',
+        ]}
+      />
     </div>
   )
 }
@@ -94,10 +101,11 @@ type HeroProps = {
 
 export default function Hero({ movie }: Readonly<HeroProps>) {
   return (
-    <div className="w-full mt-28 p-0">
+    <div className="w-full mt-28 p-0 relative">
       <Container>
         <HeroContent movie={movie} />
       </Container>
+      <HeroMediaControls rating={18} />
     </div>
   )
 }

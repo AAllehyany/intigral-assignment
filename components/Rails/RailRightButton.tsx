@@ -1,6 +1,15 @@
-export default function RailRightButton() {
+type RailButtonProps = {
+  handler: () => void
+}
+
+export default function RailRightButton({
+  handler,
+}: Readonly<RailButtonProps>) {
   return (
-    <button className="flex h-full w-16 items-center justify-center bg-black/80 text-white/60">
+    <button
+      onClick={() => handler()}
+      className="flex h-full w-16 items-center justify-center bg-black/60 text-white/60"
+    >
       <svg
         width="8"
         height="17"

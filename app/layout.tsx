@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Open_Sans, Montserrat } from 'next/font/google'
 import './globals.css'
+import Footer from '@/components/Footer/Footer'
 
 const openSans = Open_Sans({ variable: '--font-open', subsets: ['latin'] })
 const montserrat = Montserrat({
@@ -25,6 +26,7 @@ export default function RootLayout({
         className={`${openSans.variable} ${montserrat.variable} bg-ott-blue-2 font-montserrat`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   )

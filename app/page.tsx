@@ -5,8 +5,11 @@ import Hero from '@/components/Hero/Hero'
 import MainBody from '@/components/MainBody'
 import NewsBlock from '@/components/NewsBlock'
 import NewsFeed from '@/components/NewsFeed'
+import Rail from '@/components/Rail/Rail'
+import RailCard from '@/components/Rails/RailCard'
 import RailContainer from '@/components/Rails/RailContainer'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   const latestMovie = {
@@ -73,6 +76,8 @@ export default function Home() {
     },
   ]
 
+  const trendingMovies = Array(24).fill(latestMovie)
+
   const newsBlockData = [latestNews, latestNews, latestNews, latestNews]
 
   return (
@@ -83,7 +88,13 @@ export default function Home() {
       <MainBody>
         <NewsBlock news={newsBlockData} categories={newsCategories} />
         <FeaturedSection title="Featured by System">
-          <RailContainer direction="vertical" />
+          <Rail rows={7}>
+            {trendingMovies.map((m, k) => (
+              <Link href="#" className="w-full" key={k}>
+                <RailCard width="normal" aspect="vertical" movie={m} />
+              </Link>
+            ))}
+          </Rail>
         </FeaturedSection>
 
         <FeaturedSection title="Trending Content">

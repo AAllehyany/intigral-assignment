@@ -6,8 +6,8 @@ import RailCardThumbnail from './RailCardThumbnail'
 const railCard = cva('flex flex-col gap-3 shrink-0 cursor-pointer', {
   variants: {
     width: {
-      normal: 'w-[300px]',
-      tall: 'w-[260px]',
+      normal: 'w-full',
+      tall: 'w-full',
     },
   },
 })

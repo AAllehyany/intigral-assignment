@@ -1,6 +1,13 @@
-export default function RailLeftButton() {
+type RailButtonProps = {
+  handler: () => void
+}
+
+export default function RailLeftButton({ handler }: Readonly<RailButtonProps>) {
   return (
-    <button className="flex h-full w-16 items-center justify-center bg-black/80 text-white/60">
+    <button
+      onClick={() => handler()}
+      className="flex h-full w-16 items-center justify-center bg-black/60 text-white/60"
+    >
       <svg
         width="8"
         height="17"
@@ -9,7 +16,7 @@ export default function RailLeftButton() {
         xmlns="http://www.w3.org/2000/svg"
         className="size-6"
       >
-        <path opacity="0.2" d="M0 16.5L8 8.5L-1.39876e-06 0.5" fill="#F2F2F2" />
+        <path opacity="0.2" d="M8 16.5L6.99382e-07 8.5L8 0.5" fill="#F2F2F2" />
       </svg>
     </button>
   )
